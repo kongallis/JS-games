@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function flipCard() {
+        if (cardsChosen.length === 1 && this.getAttribute('data-id') === cardsChosenId[0]) {
+            alert('Please select a different card')
+            return;
+        }
+
         let cardId = this.getAttribute('data-id')
         cardsChosen.push(cardArray[cardId].name)
         cardsChosenId.push(cardId)
